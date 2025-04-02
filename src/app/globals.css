@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1d1d1d;
 }
 
 @theme inline {
@@ -19,8 +19,187 @@
   }
 }
 
-body {
+body {  
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #292929;
+}
+
+
+.philosopher-regular {
+  font-family: "Philosopher", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.philosopher-bold {
+  font-family: "Philosopher", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.__stickedHeader {
+  @apply bg-white sticky top-0 z-[9] shadow-[0_5px_20px_0_rgba(0,0,0,0.15)];
+}
+
+.__mainContainer {
+  @apply max-w-[1360px] w-full px-4 mx-auto;
+}
+
+.__navLinks {
+  @apply px-2 py-[18px] font-medium text-base block;
+}
+
+.main_search_btn {
+  @apply cursor-pointer ;
+}
+
+.main_search_btn i {
+  @apply w-[3rem] h-[3rem] leading-[3rem] text-center text-[#89c818] border border-[#81c408] rounded-full;
+}
+
+.owl-carousel.bannerSlider.owl-loaded {
+  @apply flex flex-col justify-center;
+}
+
+.owl-carousel.bannerSlider .owl-nav {
+  @apply absolute w-full flex justify-between px-5;
+}
+
+.owl-carousel.bannerSlider .owl-nav button.owl-prev,
+.owl-carousel.bannerSlider .owl-nav button.owl-next {
+  @apply w-[70px] h-[130px] bg-[#00000080] text-[#81c408] hover:bg-[#81c408] hover:text-white text-[42px] flex justify-center 
+  items-center duration-300 transition-all;
+}
+
+.owlItems {
+  @apply relative;
+}
+
+._wtContent {
+  @apply w-full h-full absolute top-0 left-0 ;
+}
+
+._wtContent_innr {
+  background-image: url(/assets/img/transparent-bg.png);
+  @apply max-w-[1110px] w-full h-full bg-[initial] bg-center mx-auto bg-no-repeat flex justify-center items-center;
+}
+
+._wtContent_txts {
+  @apply text-center pb-32;
+}
+
+._wtContent_txts h2 {
+  @apply text-white text-[52px] leading-normal;
+}
+
+._wtContent_txts h2 span{
+  @apply text-[#7fba00] ;
+}
+
+
+/* Categary Carosel */
+
+.categorySlider {
+  @apply -mx-4 ;
+}
+
+.categorySlider .owlItems {
+  @apply px-[7.5px] ;
+}
+
+.item_image_content{
+  @apply w-[250px] h-[250px] inline-flex justify-center rounded-full overflow-hidden relative before:contain-content before:absolute before:top-0 
+  before:right-0 before:bg-[#000000b3] before:w-full before:h-full before:transition-[0.4s_cubic-bezier(0.25,1,0.5,1)] before:opacity-0 hover:before:opacity-100 ;
+}
+
+.item_image_content img {
+  @apply max-w-[initial] h-auto object-cover;
+}
+
+.item_image_content h6 {
+  @apply absolute bottom-[39px] right-[-5px] text-white text-[1rem] bg-[#81c408] p-[0.5rem_2rem] font-semibold rounded-[50rem];
+}
+
+.category_left_thumb {
+  @apply absolute transform-[translateY(-50%)] top-[50%] left-0;
+}
+
+.owl-carousel.categorySlider .owl-nav.disabled {
+  @apply flex gap-2.5 absolute right-5 -top-[38%];
+}
+
+.owl-carousel.categorySlider .owl-nav.disabled .owl-prev,
+.owl-carousel.categorySlider .owl-nav.disabled .owl-next {
+  @apply w-10 h-10 text-white text-base bg-[#444444] rounded-full flex justify-center items-center;
+}
+
+.owl-carousel.categorySlider .owl-nav.disabled .owl-next {
+  @apply  bg-[#81c408];
+}
+
+.__commonTabBx .react-tabs__tab-list {
+  @apply flex gap-[5px];
+}
+
+.__commonTabBx .react-tabs__tab button{
+  @apply text-[#525252] text-sm p-[4.5px_24px] bg-[#f2f7f3] rounded-[50rem] cursor-pointer font-medium
+  transition-[color_.15s_ease-in-out,background-color_.15s_ease-in-out,border-color_.15s_ease-in-out] ;
+}
+
+.__commonTabBx .react-tabs__tab.react-tabs__tab--selected button{
+  @apply bg-[#81c408] text-white;
+}
+
+.__commonTabBx .react-tabs__tab-panel {
+  @apply transition-[all_.25s] opacity-0;
+}
+
+.__commonTabBx .react-tabs__tab-panel.react-tabs__tab-panel--selected {
+  @apply opacity-100;
+}
+
+.__commonTabBx.__productFilts {
+  @apply relative ;
+}
+
+.__commonTabBx.__productFilts .react-tabs__tab-list {
+  @apply absolute right-0 -top-[65px];
+}
+
+.product_layout_1 {
+  @apply w-full rounded-[2rem] bg-[linear-gradient(to_top,_#dddddd,_#81c408)] p-0.5 relative overflow-hidden;
+}
+
+.product_layout_content {
+  @apply bg-white p-[20px_42px] rounded-[2rem] relative;
+}
+
+.product_image {
+  @apply min-w-[10rem] h-[13rem] m-[4rem_auto_2rem_auto] flex justify-center items-center transition-[0.4s_cubic-bezier(0.25,1,0.5,1)];
+}
+
+.product_layout_content .product_image .pic-1 {
+  @apply transition-[1.5s_cubic-bezier(0.25,1,0.5,1)] duration-[1.2s];
+}
+
+.product_layout_content .product_image .pic-2 {
+  @apply absolute opacity-0 transition-[1.5s_ease] duration-[1.2s] max-w-[200px] overflow-hidden invisible;
+}
+
+.product_layout_content:hover .product_image .pic-1 {
+  @apply invisible opacity-0 duration-[1.2s];
+}
+
+.product_layout_content:hover .product_image .pic-2 {
+  @apply visible opacity-100 transition-[1.5s_ease] duration-[1.2s];
+  /* visibility: visible;
+  opacity: 1;
+  -webkit-transition: 1.5s ease;
+  transition: 1.5s ease;
+  max-width: 200px; */
 }
