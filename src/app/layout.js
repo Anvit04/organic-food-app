@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Header } from "@/common/header";
 import { Footer } from "@/common/footer";
+import MenuProvider from "@/common/MenuProvider";
 
 
 export const metadata = {
@@ -18,9 +19,11 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
       </head>
       <body>
-        <Header/>
-        {children}
-        <Footer/>
+        <MenuProvider>
+          <Header />
+          {children}
+          <Footer />
+        </MenuProvider>
       </body>
     </html>
   );
